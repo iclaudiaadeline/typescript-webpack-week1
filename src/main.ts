@@ -17,6 +17,18 @@ class Book {
     }
 }
 
+const reviews: Review[] = [];
+
+function addReview(bookId: number, rating: number, comment: string): void {
+  const review: Review = {
+    bookId,
+    rating,
+    comment,
+  };
+
+  reviews.push(review);
+}
+
 // Function to display book information
 function displayBook(book) {
     const bookList = document.getElementById("book-list");
