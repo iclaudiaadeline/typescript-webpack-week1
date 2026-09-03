@@ -30,8 +30,11 @@ function addReview(bookId: number, rating: number, comment: string): void {
 }
 
 // Function to display book information
-function displayBook(book) {
+function displayBook(book: Book): void {
     const bookList = document.getElementById("book-list");
+    if (!bookList) {
+      throw new Error("Book list element not found");
+    }
     const bookDiv = document.createElement("div");
     bookDiv.innerHTML = `
       <h2>${book.title}</h2>
@@ -41,9 +44,11 @@ function displayBook(book) {
 }
 
 // Create some book objects
-const book1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
-const book2 = new Book("The Lord of the Rings", "J.R.R. Tolkien", 1954);
+const book1: Book = new Book("The Hobbit", "J.R.R. Tolkien", 1937);
+const book2: Book = new Book("The Lord of the Rings", "J.R.R. Tolkien", 1954);
 
+addReview(1, 5, "A timeless classic!");
+addReview(2, 4, "An epic tale of adventure and friendship.");
 // Display the books on the webpage
 displayBook(book1);
 displayBook(book2);
