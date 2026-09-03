@@ -31,16 +31,13 @@ function addReview(bookId: number, rating: number, comment: string): void {
 
 // Function to display book information
 function displayBook(book: Book): void {
-    const bookList = document.getElementById("book-list");
-    if (!bookList) {
-      throw new Error("Book list element not found");
-    }
-    const bookDiv = document.createElement("div");
-    bookDiv.innerHTML = `
-      <h2>${book.title}</h2>
-      <p>By ${book.author}, ${book.year}</p>
-    `;
-    bookList.appendChild(bookDiv);
+  const bookList = document.getElementById("book-list");
+  const bookDiv = document.createElement("div");
+  bookDiv.innerHTML = `
+    <h2>${book.title}</h2>
+    <p>By ${book.author}, ${book.year}</p>
+  `;
+  bookList!.appendChild(bookDiv);
 }
 
 // Create some book objects
