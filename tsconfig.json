@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",       // Specify ECMAScript target version (e.g., ES5, ES6, etc.)
-    "module": "commonjs", // Specify module code generation
-    "outDir": "./dist",   // Redirect output structure to the directory
-    "rootDir": "./src",   // Specify the root directory of input files
-    "strict": true,       // Enable all strict type-checking options
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"  // Specify module resolution strategy
+    "target": "es5",           // Compile TypeScript down to ES5 JavaScript (works in older browsers)
+    "module": "commonjs",      // Use CommonJS module system (Node.js style require/exports)
+    "outDir": "./dist",        // Output compiled JS files to the dist folder
+    "rootDir": "./src",        // Look for TypeScript source files in the src folder
+    "strict": true,            // Enable all strict type-checking rules
+    "esModuleInterop": true,   // Allows default imports from CommonJS modules
+    "skipLibCheck": true,      // Skip type checking of declaration files (faster builds)
+    "forceConsistentCasingInFileNames": true,  // Prevent import casing issues across OS
+    "moduleResolution": "node" // Resolve modules the same way Node.js does
   },
-  "include": ["src/**/*"],  // Files to include in the compilation
-  "exclude": ["node_modules"] // Files to exclude from the compilation
+  "include": ["src/**/*"],     // Only compile files inside the src folder
+  "exclude": ["node_modules"]  // Ignore the node_modules folder
 }

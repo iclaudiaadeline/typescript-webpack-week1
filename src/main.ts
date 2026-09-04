@@ -34,12 +34,13 @@ function addReview(bookId: number, rating: number, comment: string): void {
 // Task 1: Type annotations on displayBook parameters and return type
 function displayBook(book: Book): void {
   const bookList = document.getElementById("book-list");
+  if (!bookList) return;
   const bookDiv = document.createElement("div");
   bookDiv.innerHTML = `
     <h2>${book.title}</h2>
     <p>By ${book.author}, ${book.year}</p>
   `;
-  bookList!.appendChild(bookDiv);
+  bookList.appendChild(bookDiv);
 }
 
 // Create some book objects
